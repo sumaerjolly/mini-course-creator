@@ -19,7 +19,7 @@ export class Home extends Component {
           title: '2. Adding react to an existing rails app',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          active: false
+          active: true
         },
         {
           id: 3,

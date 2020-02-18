@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import ActiveItem from './ActiveItem';
 
 export class Table extends Component {
   constructor(props) {
@@ -7,7 +8,13 @@ export class Table extends Component {
   }
   render() {
     const items = this.props.course_modules.map(data => {
-      return (
+      return data.active ? (
+        <ActiveItem
+          key={data.id}
+          title={data.title}
+          description={data.description}
+        />
+      ) : (
         <Item key={data.id} title={data.title} description={data.description} />
       );
     });
