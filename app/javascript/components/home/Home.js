@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Jumbotron from './Jumbotron';
+import Table from './Table/Table';
 
 export class Home extends Component {
   constructor() {
@@ -41,6 +42,7 @@ export class Home extends Component {
     return (
       <div>
         <Jumbotron />
+        <Table course_modules={this.state.course_modules} />
       </div>
     );
   }
