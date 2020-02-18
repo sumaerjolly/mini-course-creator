@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Jumbotron from './Jumbotron';
 
 export class Home extends Component {
   constructor() {
@@ -39,7 +40,7 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Testing</h1>
+        <Jumbotron />
       </div>
     );
   }
