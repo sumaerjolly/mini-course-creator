@@ -19,7 +19,7 @@ export class Home extends Component {
           title: '2. Adding react to an existing rails app',
           description:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-          active: true
+          active: false
         },
         {
           id: 3,
@@ -38,11 +38,27 @@ export class Home extends Component {
       ]
     };
   }
+
+  handleClickVideo(item, e) {
+    e.preventDefault();
+    let course_modules = [...this.state.course_modules];
+    course_modules.map(data => {
+      data.active = false;
+    });
+    item.active = !item.active;
+    course_modules[item.id - 1] = item;
+    this.setState({
+      course_modules
+    });
+  }
   render() {
     return (
       <div>
         <Jumbotron />
-        <Table course_modules={this.state.course_modules} />
+        <Table
+          handleClickVideo={this.handleClickVideo.bind(this)}
+          course_modules={this.state.course_modules}
+        />
       </div>
     );
   }

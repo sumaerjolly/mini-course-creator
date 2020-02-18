@@ -16,7 +16,7 @@ const Button = styled.a`
     -6px 6px 0px 3px #473229;
 `;
 
-function ActiveItem({ title, description }) {
+function ActiveItem({ title, description, handleClickVideo }) {
   return (
     <div className="row pt-4 pb-4">
       <div className="col-md-10 offset-md-1">
@@ -30,7 +30,9 @@ function ActiveItem({ title, description }) {
                   <h4>{title}</h4>
                   <p>{description}</p>
                   <div className="cta-wrapper">
-                    <Button className="btn cta-btn">Watch this Video</Button>
+                    <Button onClick={handleClickVideo} className="btn cta-btn">
+                      Watch this Video
+                    </Button>
                   </div>
                 </div>
               </div>

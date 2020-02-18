@@ -8,14 +8,21 @@ export class Table extends Component {
   }
   render() {
     const items = this.props.course_modules.map(data => {
+      let handleClickVideo = this.props.handleClickVideo.bind(this, data);
       return data.active ? (
         <ActiveItem
           key={data.id}
           title={data.title}
           description={data.description}
+          handleClickVideo={handleClickVideo}
         />
       ) : (
-        <Item key={data.id} title={data.title} description={data.description} />
+        <Item
+          handleClickVideo={handleClickVideo}
+          key={data.id}
+          title={data.title}
+          description={data.description}
+        />
       );
     });
     return (
